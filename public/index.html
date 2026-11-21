@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IoT Water Level Monitoring</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Water Level Monitor</h1>
+            <p>IoT Sensor Monitoring Dashboard</p>
+        </div>
+
+        <div id="connectionStatus" class="status">
+            Checking connection...
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="cards">
+
+            <div class="card">
+                <p>Water Level</p>
+                <h2 id="waterLevel">-- cm</h2>
+                <span>Current water height</span>
+            </div>
+
+            <div class="card">
+                <p>Tank Filled</p>
+                <h2 id="fillPercentage">--%</h2>
+                <div class="progress">
+                    <div id="fillBar"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <p>Sensor Distance</p>
+                <h2 id="distance">-- cm</h2>
+                <span>Distance to water surface</span>
+            </div>
+
+            <div class="card">
+                <p>Battery Level</p>
+                <h2 id="battery">--%</h2>
+                <span>Device battery status</span>
+            </div>
+
+        </section>
+
+        <section class="panel">
+            <h2>Water Level History</h2>
+            <canvas id="waterChart"></canvas>
+        </section>
+
+        <section class="panel">
+            <h2>GPS Location</h2>
+
+            <div class="gps-grid">
+                <p>Latitude: <strong id="latitude">--</strong></p>
+                <p>Longitude: <strong id="longitude">--</strong></p>
+                <p>Accuracy: <strong id="accuracy">--</strong></p>
+            </div>
+
+            <a id="mapLink" href="#" target="_blank" rel="noopener">
+                View Location on Map
+            </a>
+        </section>
+
+        <section class="panel">
+            <h2>Recent Sensor Readings</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Water Level</th>
+                            <th>Fill %</th>
+                            <th>Distance</th>
+                            <th>Battery</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="readingsTable">
+                        <tr>
+                            <td colspan="5">Waiting for sensor data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        IoT-Based Water Level Detection System
+    </footer>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

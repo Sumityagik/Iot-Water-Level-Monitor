@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@elastic/elasticsearch": "^9.5.1",
+    "@stoprocent/noble": "^2.8.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "mqtt": "^5.16.1",
+    "serialport": "^13.0.0"
+  }
+}
